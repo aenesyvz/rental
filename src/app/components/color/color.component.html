@@ -1,0 +1,18 @@
+<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+    <div class="card-header" ><label for="colorFilter" class="form-label" >Renk Ara</label>
+      <input
+      
+        type="text"
+        class="form-control"
+        id="colorFilter"
+        placeholder="Arama ifadesi giriniz.."
+        [(ngModel)]="colorFilter"
+       
+      />
+    </div>
+    <ul class="list-group" >
+      <li *ngFor="let color of colors | colorPipe:colorFilter"> 
+        <a routerLink = "/cars/color/{{color.colorId}}" class="list-group-item list-group-item-action list-group-item-dark">{{color.colorName}}</a>
+      </li>
+    </ul>
+  </div>
